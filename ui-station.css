@@ -6,6 +6,8 @@ body {
   width: auto !important;
 }
 
+.zoomed { zoom: 2; -moz-transform: scale(2); -moz-transform-origin: 400px 400px}
+
 .navbar-default {
   background-color: #EEEEEE !important;
   border-color: #CCCCCC !important;
@@ -46,9 +48,45 @@ body {
   width: 300px;
 }
 
+.song-description-overlay {
+  position: absolute;
+  bottom: 0px;
+  height: 22px;
+  width: 100%;
+  background: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+  background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,1));
+}
+
+.song-overlay-text {
+  color: #EFEFEF;
+  font-weight: bold;
+  float: left;
+  padding-left: 5px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.song-mute {
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  height: 300px;
+  line-height: 300px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  font-size: 24pt !important;
+}
+
 .album-cover {
   background-image: url('img/bluetrane-albumcover.jpg');
   background-size: 300px 300px;
+  position: relative;
   height: 300px;
   width: 300px;
   border: 1px solid black;
