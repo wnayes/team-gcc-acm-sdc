@@ -1,0 +1,111 @@
+body {
+  background-color: transparent !important;
+}
+
+.container {
+  width: auto !important;
+}
+
+.navbar-default {
+  background-color: #2a2a2a !important;
+  border-color: #000000 !important;
+}
+.navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #777777 !important;
+  background-color: #1a1a1a !important;
+}
+.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #999999 !important;
+  background-color: transparent !important;
+}
+
+.play-controls-rating {
+  border-radius: 4px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 300px;
+}
+
+.album-cover {
+  background-image: url('img/bluetrane-albumcover.jpg');
+  background-size: 300px 300px;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.enter-comment {
+  background-color: #CCCCCC;
+  border-left: 1px solid #AAAAAA;
+  border-right: 1px solid #AAAAAA;
+  border-bottom: 1px solid #AAAAAA;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 14pt !important;
+  padding: 5px;
+  line-height: 1.75em;
+  text-align: center;
+}
+.enter-comment:hover {
+  background-color: #EEEEEE;
+  cursor: pointer;
+}
+
+.add-review-btn {
+  font-family: "Calibri";
+  font-weight: bold !important;
+  line-height: 1.75em;
+}
+
+.comment-box {
+  background-color: #DDDDDD;
+  border: 1px solid #999999;
+  cursor: text;
+  font-size: 9pt;
+  padding: 3px;
+  text-align: left;
+}
+
+.song-rating-btns {
+  width: 300px;
+  height: 50px;
+}
+
+.song-rating-btn {
+  border: 1px solid black;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20pt !important;
+  margin-top: 0;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  height: 50px;
+  line-height: 46px;
+  width: 150px;
+  text-align: center;
+}
+
+.rate-up {
+  background-color: #5CB85C;
+  border-color: #4CAE4C;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.rate-down {
+  background-color: #D9534F;
+  border-color: #D43F3A;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.comm-area {
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  background-color: #CCCCCC;
+  padding: 5px;
+}
