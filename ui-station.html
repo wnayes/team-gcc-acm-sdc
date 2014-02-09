@@ -72,7 +72,14 @@
         </div>
         <div class="col-xs-4">
           <div class="play-controls-rating">
-            <div class="album-cover"></div>
+            <div class="album-cover">
+              <div class="song-mute">
+                <span class="glyphicon glyphicon-volume-off"></span>
+              </div>
+              <div class="song-description-overlay">
+                <div class="song-overlay-text">Moment's Notice</div>
+              </div>
+            </div>
             <div class="song-rating-btns">
               <button type="button" class="song-rating-btn rate-up btn btn-lg btn-success">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
@@ -82,7 +89,7 @@
             </div>
             <div class="enter-comment">
               <div class="comment-box hidden" contenteditable="true">Type review, then press selection above.</div>
-              <span class="glyphicon glyphicon-pencil"></span>
+              <span class="comment-box-icon glyphicon glyphicon-pencil"></span>
               <span class="add-review-btn">Add review notes</span>
             </div>
           </div>
@@ -100,12 +107,12 @@
         if($(".comment-box").hasClass('hidden')) {
           $(".comment-box").animate({height:106},200).removeClass('hidden');
           $(".add-review-btn").text("Cancel reviewing");
-          $(".glyphicon-pencil").removeClass('glyphicon-pencil').addClass('glyphicon-remove');
+          $(".comment-box-icon").removeClass('glyphicon-pencil').addClass('glyphicon-remove');
         } else {
           $(".comment-box").animate({height:0}, 200, "swing", function() {
             $(".comment-box").addClass('hidden');
             $(".add-review-btn").text("Add review notes");
-            $(".glyphicon-remove").removeClass('glyphicon-remove').addClass('glyphicon-pencil');
+            $(".comment-box-icon").removeClass('glyphicon-remove').addClass('glyphicon-pencil');
           });
         }
       });
@@ -163,7 +170,7 @@
         var rateMsgClass = 'comm-message-type-rate-' + updown;
         var rateGlyphClass = 'glyphicon-thumbs-' + updown;
         var newMsg = "";
-        if ($('.comm-message-type:last').hasClass('rateMsgClass')
+        if ($('.comm-message-type:last').hasClass(rateMsgClass)
             && !($('.comm-message-type:last').siblings('.comm-message-text').length)
             && !reviewText) {
           newMsg = '<div class="comm-message-pic profile-pic-' + 3 + '"></div>';
@@ -184,10 +191,40 @@
 
         // Switch over to "submitted" state.
         $(".comment-box").text("Type review, then press selection above.");
+
+        $(".enter-comment").animate({height:0}, 200, "swing", function() {
+          $(".comment-box").addClass('hidden');
+          $(".enter-comment").addClass('hidden');
+          $(".rate-" + (updown == "up" ? "down" : "up")).hide();
+          $(".rate-" + updown).css({width: "300px"});
+        });
       }
 
       $('.rate-up').click(function() {rateInsertion("up"); });
       $('.rate-down').click(function() {rateInsertion("down"); });
+
+      var flipText = false;
+      window.setInterval(function() {
+        if (!flipText) {
+          $('.song-overlay-text').fadeOut(function() {
+            $('.song-overlay-text').text("Blue Trane - John Coltrane").fadeIn();
+          });
+          ;
+        }
+        else {
+          $('.song-overlay-text').fadeOut(function() {
+            $('.song-overlay-text').text("Moment's Notice").fadeIn();
+          });
+        }
+        flipText = !flipText;
+      }, 7500);
+
+      // Should have worked with CSS :hover but there were issues...
+      $(".album-cover").hover(function() {
+        $('.song-mute').fadeIn('fast');
+      }, function() {
+        $('.song-mute').fadeOut('fast');
+      });
     </script>
   </body>
 </html>
