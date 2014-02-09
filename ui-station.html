@@ -35,23 +35,9 @@
             <a class="navbar-brand" href="#">Project name</a>
           </div>
           <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
+            <form class="navbar-search pull-left">
+              <input type="text" class="station-search search-query input-lg" placeholder="Station name">
+            </form>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="./"><img src="img/fblogin.png"></img></a></li>
             </ul>
@@ -63,7 +49,24 @@
         <div class="col-xs-6">
           <div class="comm-area">
             <div class="comm-message">
-              <img class="comm-"></img>
+              <span class="comm-message-type comm-message-type-newsong glyphicon glyphicon-music"></span>
+              <div class="comm-message-text">Moment's Notice - John Coltrane</div>
+            </div>
+            <div class="comm-message">
+              <span class="comm-message-type comm-message-type-comment glyphicon glyphicon-comment"></span>
+              <div class="comm-message-pic profile-pic-1"></div>
+              <div class="comm-message-text">I am a cat and I like jazz.</div>
+            </div>
+            <div class="comm-message">
+              <span class="comm-message-type comm-message-type-rate-up glyphicon glyphicon-thumbs-up"></span>
+              <div class="comm-message-pic profile-pic-2"></div>
+            </div>
+
+            <div class="input-group comm-comment-area">
+              <input type="text" class="comm-comment-box form-control">
+              <span class="input-group-btn">
+                <button id="sendCommentBtn" class="btn btn-default" type="button">Send</button>
+              </span>
             </div>
           </div>
         </div>
@@ -96,7 +99,7 @@
       $(".enter-comment").click(function() {
         if($(".comment-box").hasClass('hidden')) {
           $(".comment-box").animate({height:106},200).removeClass('hidden');
-          $(".add-review-btn").text("Cancel commenting");
+          $(".add-review-btn").text("Cancel reviewing");
           $(".glyphicon-pencil").removeClass('glyphicon-pencil').addClass('glyphicon-remove');
         } else {
           $(".comment-box").animate({height:0}, 200, "swing", function() {
@@ -112,6 +115,79 @@
         }
         event.stopPropagation();
       });
+
+      function insertCommMessage(type, text, picIndex) {
+        // <div class="comm-message">
+        //       <span class="comm-message-type comm-message-type-rate-up glyphicon glyphicon-thumbs-up"></span>
+        //       <div class="comm-message-pic profile-pic-2"></div>
+        //       <div class="comm-message-text">This is very wise jazz yes.</div>
+        //     </div>
+        var newMsg = '<div class="comm-message"><span class="comm-message-type glyphicon ';
+        if (type == "comment")
+          newMsg += 'comm-message-type-comment glyphicon-comment';
+        else if (type == "rateup")
+          newMsg += 'comm-message-type-rate-up glyphicon-thumbs-up';
+        else if (type == "ratedown")
+          newMsg += 'comm-message-type-rate-down glyphicon-thumbs-down';
+        else if (type == "newsong")
+          newMsg += 'comm-message-type-newsong glyphicon-music';
+        newMsg += '"></span>';
+
+        if (type == "comment" || type == "rateup" || type == "ratedown") {
+          newMsg += '<div class="comm-message-pic profile-pic-' + picIndex + '"></div>';
+        }
+
+        if (text)
+          newMsg += '<div class="comm-message-text">' + text + '</div>';
+        newMsg += '</div>';
+
+        $(".comm-area").append(newMsg);
+      };
+
+      var sendCommentFn = function() {
+        insertCommMessage("comment", $(".comm-comment-box").val(), 2);
+        $(".comm-comment-box").val('');
+      };
+      $("#sendCommentBtn").click(sendCommentFn);
+      $(document).on("keypress", ".comm-comment-box", function(e) {
+        if (e.which == 13) {
+          sendCommentFn();
+        }
+      });
+
+      var rateInsertion = function(updown) {
+        var reviewText = $(".comment-box").text();
+        if (reviewText == "Type review, then press selection above.")
+          reviewText = null;
+
+        var rateMsgClass = 'comm-message-type-rate-' + updown;
+        var rateGlyphClass = 'glyphicon-thumbs-' + updown;
+        var newMsg = "";
+        if ($('.comm-message-type:last').hasClass('rateMsgClass')
+            && !($('.comm-message-type:last').siblings('.comm-message-text').length)
+            && !reviewText) {
+          newMsg = '<div class="comm-message-pic profile-pic-' + 3 + '"></div>';
+
+          $(".comm-message-pic:last").parent().append(newMsg);
+        }
+        else {
+          newMsg = '<div class="comm-message"><span class="comm-message-type glyphicon ';
+          newMsg += rateMsgClass + ' ' + rateGlyphClass + '"></span>';
+          newMsg += '<div class="comm-message-pic profile-pic-' + 3 + '"></div>';
+
+          if (reviewText)
+            newMsg += '<div class="comm-message-text">' + reviewText + '</div>';
+          newMsg += '</div>';
+
+          $(".comm-area").append(newMsg);
+        }
+
+        // Switch over to "submitted" state.
+        $(".comment-box").text("Type review, then press selection above.");
+      }
+
+      $('.rate-up').click(function() {rateInsertion("up"); });
+      $('.rate-down').click(function() {rateInsertion("down"); });
     </script>
   </body>
 </html>
