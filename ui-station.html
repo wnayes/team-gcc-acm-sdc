@@ -26,13 +26,10 @@
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <div>
+              <img class="navbar-logo" src="logos/onnothing/grey48x45.png"></img>
+              <a class="navbar-brand" href="#">GroupTune</a>
+            </div>
           </div>
           <div class="navbar-collapse collapse">
             <form class="navbar-search pull-left">
@@ -162,7 +159,11 @@
         }
       });
 
+      var alreadyInserted = false;
       var rateInsertion = function(updown) {
+        if (alreadyInserted)
+          return;
+
         var reviewText = $(".comment-box").text();
         if (reviewText == "Type review, then press selection above.")
           reviewText = null;
@@ -198,7 +199,9 @@
           $(".rate-" + (updown == "up" ? "down" : "up")).hide();
           $(".rate-" + updown).css({width: "300px"});
         });
-      }
+
+        alreadyInserted = true;
+      };
 
       $('.rate-up').click(function() {rateInsertion("up"); });
       $('.rate-down').click(function() {rateInsertion("down"); });
@@ -207,7 +210,7 @@
       window.setInterval(function() {
         if (!flipText) {
           $('.song-overlay-text').fadeOut(function() {
-            $('.song-overlay-text').text("Blue Trane - John Coltrane").fadeIn();
+            $('.song-overlay-text').text("Blue Train - John Coltrane").fadeIn();
           });
           ;
         }

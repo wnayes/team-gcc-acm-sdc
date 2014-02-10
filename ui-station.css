@@ -41,6 +41,17 @@ body {
   float: right;
 }
 
+.navbar-brand {
+  font-size: 18pt !important;
+  margin-top: 2px;
+}
+
+.navbar-logo {
+  float: left;
+  margin-top: 4px;
+  margin-right: 8px;
+}
+
 .play-controls-rating {
   border-radius: 4px;
   box-sizing: border-box;
