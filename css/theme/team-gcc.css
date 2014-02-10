@@ -86,6 +86,12 @@ body {
 .reveal .destinations a:last-child {
   margin-right: 0;
 }
+.reveal .destinations img {
+  opacity: .6;
+}
+.reveal .destinations img:hover {
+  opacity: 1;
+}
 
 /* Overview slides */
 .big-thumb {
