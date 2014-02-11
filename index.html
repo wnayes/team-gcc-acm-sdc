@@ -26,8 +26,6 @@
 
 	<body>
 		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
 					<section>
@@ -57,7 +55,6 @@
 
 				<section>
 					<h2>The Goal</h2>
-					<br />
 					<p>Create a web platform that friends can use to
 						 <strong>create</strong>, <strong>develop</strong>, and <strong>promote</strong>
 						  their own radio station.</p>
@@ -65,10 +62,8 @@
 
 				<section>
 					<h2>Station Creation</h2>
-					<br />
 					<p>Listeners pick a memorable <strong>name</strong> to distinguish
 					   their channel.</p>
-					<br />
 					<p>A <strong>genre mix</strong> is chosen to seed future song selections.</p>
 
 <!--
@@ -83,10 +78,8 @@
 
         <section>
         	<h2>Station Development</h2>
-        	<br />
 					<p>A channel creator promotes listeners into <strong>influencers</strong>,
 						 who have say in reviewing songs.</p>
-					<br />
 					<p>The currently playing song is given <strong>thumbs up</strong> or
 					   <strong>thumbs down</strong> by active influencers to shape future
 					   song selection.</p>
@@ -97,9 +90,7 @@
 
 				<section>
 					<h2>Station Promotion</h2>
-					<br />
 					<p>A station can be as public or private as the creator wants.</p>
-					<br />
 					<p><strong>Facebook</strong> integration provides listeners means to
 						 share channels with their friends.</p>
 				</section>
@@ -140,9 +131,7 @@
 						<br/>
 						<ul>
 						  <li>Listeners will not need to create separate accounts for our service.</li>
-						  <br/>
 						  <li>Immediate access to listeners' profile pictures and names.</li>
-						  <br/>
 						  <li>We can display the stations liked by a listener's friends.</li>
 						</ul>
 					</section>
@@ -154,15 +143,119 @@
 
 				<section data-state="first-database-slide" id="first-database-slide">
 					<h2>Database Design</h2>
-					<br />
-					<p<>/p>
+					<p></p>
 				</section>
 
 				<section data-state="first-arch-slide" id="first-arch-slide">
-					<h2>System Architecture Overview</h2>
-					<p>
-						Write content now. Oh wait.
-					</p>
+					<h2>System Architecture</h2>
+					<ul>
+						<li>Server Software</li>
+						<li>API Design</li>
+						<li>Scalability</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Software</h2>
+					<p>Primary data storage will use a relational database, likely
+						 <strong>MySQL</strong>. Volatile information will be accessed
+						 using the key-value store <strong>Redis</strong>.</p>
+					<p>To support live notifications, chat, and song synchronization, an
+						 API powered by <strong>Node.js</strong> using <strong>Socket.IO</strong>
+						 will be used.</p>
+				</section>
+
+				<section>
+					<h2>API Features / Concerns</h2>
+					<ul>
+						<li>Authentication</li>
+						<li>Chat</li>
+						<li>Song Sync / Selection</li>
+						<li>DMCA Conformity</li>
+					</ul>
+				</section>
+
+        <!-- Authentication -->
+				<section>
+					<section>
+						<h2>Authentication</h2>
+						<p>By tying user authentication to the <strong>Facebook Login API</strong>,
+							 the complexity of managing user accounts is limited.</p>
+						<p>We still need to manage socket sessions when listeners visit a
+						   channel.</p>
+					</section>
+
+					<section>
+						<h2>Establishing a Connection</h2>
+						<p class="left-p">When a socket connection is requested:</p>
+						<ol>
+              <li>Verify client authentication.
+                 <ul><li>If channel is private and the user is not privileged, deny request.</li></ul>
+              </li>
+              <li>Create a session identifier for the connection and store in Redis.</li>
+              <li>Keep track of the socket's channel association.</li>
+              <li>Acknowledge success to the client and return session id, etc.</li>
+						</ol>
+					</section>
+
+					<section>
+						<h2>Closing Connections</h2>
+						<p>As each listener leaves the channel, the volatile session and
+							 socket information will be removed.</p>
+						<p>When all sockets for a given channel have been closed, any song
+		           selection and sync actions will be canceled.</p>
+					</section>
+				</section>
+
+        <!-- Chat communication. -->
+				<section>
+					<section>
+						<h2>Chat</h2>
+						<p>Listeners will be able to participate in a live chat with other
+							 authenticated members.</p>
+            <p>TODO INSERT SOME UI HERE ?</p>
+					</section>
+
+					<section>
+						<h2>Sending and Receiving</h2>
+						<p>With an open socket connection, a <code>chat-send</code> event is
+							 emitted to the server.</p>
+						<p>Clients will receive <code>chat-recv</code> events for each message
+							 being sent to the group.</p>
+					</section>
+				</section>
+
+				<!-- Rating broadcasting. -->
+				<section>
+					<section>
+						<h2>Rating broadcasting</h2>
+						<p>Listeners will also receive reviews from others in their chat feed.</p>
+            <p>These would be sent in a similar manner as chat messages;
+               <code>rating-send</code> and <code>rating-recv</code> would be
+               communicated with relevant values.</p>
+					</section>
+				</section>
+
+				<!-- Song synchronization -->
+				<section>
+					<section>
+						<h2>Song Sync</h2>
+						<p>A critical aspect to the experience is keeping all listeners on
+							 the <strong>same song</strong> and at approximately the
+							 <strong>same listening progress</strong>.</p>
+						<p>Having a socket connection facilitates this time sensitive demand.</p>
+					</section>
+
+					<section>
+						<h2>Song Broadcasting</h2>
+						<p>A <code>new-song</code> event will be received by clients in
+						   preparation for changing music.</p>
+						<p class="left-p">Included properties:</p>
+						<ul class="compact-ul">
+							<li>Song ID</li>
+							<li>Playback Start Time</li>
+						</ul>
+					</section>
 				</section>
 			</div>
 		</div>
