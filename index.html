@@ -155,19 +155,22 @@
 					</ul>
 				</section>
 
-				<section>
-					<h2>Software</h2>
-					<p>Primary data storage will use a relational database, likely
-						 <strong>MySQL</strong>. Volatile information will be accessed
-						 using the key-value store <strong>Redis</strong>.</p>
-					<p>To support live notifications, chat, and song synchronization, an
-						 API powered by <strong>Node.js</strong> using <strong>Socket.IO</strong>
-						 will be used.</p>
-				</section>
-
         <section>
-          <object id="simpleArchDiagram" data="diagram/arch/arch-simple.svg" type="image/svg+xml"></object>
-        </section>
+					<section>
+						<h2>Software</h2>
+						<p>Primary data storage will use a relational database, likely
+							 <strong>MySQL</strong>. Volatile information will be accessed
+							 using the key-value store <strong>Redis</strong>.</p>
+						<p>To support live notifications, chat, and song synchronization, an
+							 API powered by <strong>Node.js</strong> using <strong>Socket.IO</strong>
+							 will be used.</p>
+					</section>
+
+	        <section data-background="#FFFFFF">
+	          <!-- <object id="simpleArchDiagram" data="diagram/arch/arch-simple.svg" type="image/svg+xml"></object> -->
+	          <img src="diagram/arch/simple-arch.png"></img>
+	        </section>
+	      </section>
 
 				<section>
 					<h2>API Features / Concerns</h2>
@@ -189,9 +192,10 @@
 						   channel.</p>
 					</section>
 
-					<section>
+					<section data-background="#FFFFFF">
 						<h2>Establishing a Connection</h2>
-						<p class="left-p">When a socket connection is requested:</p>
+						<img class="plain-img" src="diagram/api/auth.png"></img>
+<!-- 						<p class="left-p">When a socket connection is requested:</p>
 						<ol>
               <li>Verify client authentication.
                  <ul><li>If channel is private and the user is not privileged, deny request.</li></ul>
@@ -199,7 +203,7 @@
               <li>Create a session identifier for the connection and store in Redis.</li>
               <li>Keep track of the socket's channel association.</li>
               <li>Acknowledge success to the client and return session id, etc.</li>
-						</ol>
+						</ol> -->
 					</section>
 
 					<section>
@@ -220,23 +224,39 @@
             <p>TODO INSERT SOME UI HERE ?</p>
 					</section>
 
-					<section>
+					<section data-background="#FFFFFF">
 						<h2>Sending and Receiving</h2>
-						<p>With an open socket connection, a <code>chat-send</code> event is
+						<img class="plain-img" src="diagram/api/chat-send-recv.png"></img>
+						<!-- <p>With an open socket connection, a <code>chat-send</code> event is
 							 emitted to the server.</p>
 						<p>Clients will receive <code>chat-recv</code> events for each message
-							 being sent to the group.</p>
+							 being sent to the group.</p> -->
+					</section>
+
+					<section data-background="#FFFFFF">
+						<h2>Presence Status</h2>
+						<img class="plain-img" src="diagram/api/chat-left-join.png"></img>
+						<!-- <p>With an open socket connection, a <code>chat-send</code> event is
+							 emitted to the server.</p>
+						<p>Clients will receive <code>chat-recv</code> events for each message
+							 being sent to the group.</p> -->
 					</section>
 				</section>
 
 				<!-- Rating broadcasting. -->
 				<section>
 					<section>
-						<h2>Rating broadcasting</h2>
+						<h2>Ratings</h2>
 						<p>Listeners will also receive reviews from others in their chat feed.</p>
-            <p>These would be sent in a similar manner as chat messages;
+						TODO UI HERE
+<!--             <p>These would be sent in a similar manner as chat messages;
                <code>rating-send</code> and <code>rating-recv</code> would be
-               communicated with relevant values.</p>
+               communicated with relevant values.</p> -->
+					</section>
+
+					<section data-background="#FFFFFF">
+						<h2>Rating Events</h2>
+						<img class="plain-img" src="diagram/api/rating-send-recv.png"></img>
 					</section>
 				</section>
 
@@ -250,20 +270,50 @@
 						<p>Having a socket connection facilitates this time sensitive demand.</p>
 					</section>
 
-					<section>
+					<section data-background="#FFFFFF">
 						<h2>Song Broadcasting</h2>
-						<p>A <code>new-song</code> event will be received by clients in
+						<img class="plain-img" src="diagram/api/new-song.png"></img>
+<!-- 						<p>A <code>new-song</code> event will be received by clients in
 						   preparation for changing music.</p>
 						<p class="left-p">Included properties:</p>
 						<ul class="compact-ul">
 							<li>Song ID</li>
 							<li>Playback Start Time</li>
-						</ul>
+						</ul> -->
+					</section>
+
+					<section class="spotify" data-background="rgba(129,183,26,0.5)">
+						<h2>Spotify</h2>
+            <ul>
+            	<li>Existing library of more than 20 million songs - unreasonable
+            	    to duplicate on our infrastructure.</li>
+            	<li>External architecture handling audio streaming demands.</li>
+            	<li>We will initially scrape song genre and other information.</li>
+            </ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>DMCA Conformity</h2>
+						<ul class="checkmark">
+            	<li>Listeners react to song selections rather than selecting them.</li>
+            	<li>Song selection algorithm accounts for artist and album restrictions.</li>
+            	<li>Programs are dynamic and not pre-announced.</li>
+            	<li>Spotify provides reliable streaming security and region restrictions.</li>
+            </ul>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="#FFFFFF">
+						<h2>Scalability</h2>
+            <img class="plain-img" src="diagram/arch/node-scaling.png"></img>
 					</section>
 				</section>
 
 				<!-- Song selection -->
-				<section>
+<!-- 				<section>
 					<section>
 						<h2>Song Selection</h2>
 						<p>The success of any Internet radio application is dependent on a
@@ -294,7 +344,7 @@
             <p>Spotify will provide an HTTP REST API with searching and playback
             	 capabilities.</p>
 					</section>
-				</section>
+				</section> -->
 			</div>
 		</div>
 

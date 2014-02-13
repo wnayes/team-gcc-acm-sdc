@@ -147,6 +147,14 @@ body {
   color: #555555 !important;
 }
 
+.reveal ul.checkmark {
+  list-style-type: none;
+}
+
+.reveal ul.checkmark li:before {
+  content: "\2713\0020";
+}
+
 /*.reveal h1 {
   text-shadow: 0 1px 0 #333333,
                0 2px 0 #363636,
@@ -186,7 +194,7 @@ body {
 
 /* Images */
 .plain-img {
-
+  margin-top: 1em !important;
 }
 .mobile-img {
   width: 390px;
