@@ -140,6 +140,13 @@ body {
   font-weight: bold;
 }
 
+/* Spotify slides */
+.reveal .spotify p,
+.reveal .spotify li,
+.reveal .spotify h2 {
+  color: #555555 !important;
+}
+
 /*.reveal h1 {
   text-shadow: 0 1px 0 #333333,
                0 2px 0 #363636,
