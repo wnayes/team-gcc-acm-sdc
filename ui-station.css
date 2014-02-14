@@ -13,15 +13,22 @@ body {
   border-color: #CCCCCC !important;
 }
 
+.navbar {
+  max-width: 780px !important;
+}
+
+.navbar-search {
+  margin-top: 5px !important;
+}
+
 .station-search {
   background-color: #CCCCCC;
-  margin-top: 4px;
-  border-style: hidden !important;
+/*  border-style: hidden !important;*/
   font: 12px Arial, Helvetica, sans-serif;
   color: #444444;
-  border-width: 0px !important;
+/*  border-width: 0px !important;
   border-radius: 4px !important;
-  border: 1px solid #AAAAAA !important;
+  border: 1px solid #AAAAAA !important;*/
 }
 ::-moz-placeholder {
   color: #454545;
@@ -50,6 +57,54 @@ body {
   float: left;
   margin-top: 4px;
   margin-right: 8px;
+}
+
+.station-info-panel {
+  max-width: 780px;
+  background-color: #EEEEEE !important;
+  border-color: #CCCCCC !important;
+}
+
+.station-info-panel .panel-body {
+  padding: 0;
+}
+
+.station-info,
+.station-members {
+  float: left;
+}
+
+.station-info {
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.station-name {
+  font-size: 15pt;
+  margin: 0;
+  padding: 0;
+}
+
+.station-members {
+  padding-top: 10px;
+}
+
+.station-member-group {
+  display: inline-block;
+  max-width: 128px;
+  margin-right: 5px;
+}
+
+.station-member {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+}
+
+.station-member-pic {
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .play-controls-rating {
@@ -170,7 +225,7 @@ body {
 }
 
 .comm-area {
-  height: 500px;
+  height: 450px;
   width: 100%;
   overflow: hidden;
   border: 1px solid #CCCCCC;
@@ -216,6 +271,7 @@ body {
 
 .comm-message-pic {
   float: left;
+  background-size: 32px 32px;
   width: 32px;
   height: 32px;
 }
@@ -226,6 +282,7 @@ body {
 .profile-pic-1 { background-image: url('img/profilepics/1.jpg'); }
 .profile-pic-2 { background-image: url('img/profilepics/2.jpg'); }
 .profile-pic-3 { background-image: url('img/profilepics/3.jpg'); }
+.profile-pic-4 { background-image: url('img/profilepics/4.png'); }
 
 .comm-message-text {
   float: left;
