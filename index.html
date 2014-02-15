@@ -107,26 +107,27 @@
 
 				<section data-state="first-ui-slide" id="first-ui-slide">
 					<h2>UI Overview</h2>
-					<p>
-						We wanted our UI to be as intuitive as possible for as many people as possible. As such, we used an approach of "Less is More" and tried to keep the design very clean and simple. As a result, the users only see what they need to. There are no uneeded menus or options taking up screen space.
+					<ul>
+						<li>Station Creation</li>
+						<li>Station Page</li>
+						<li>Mobile</li>
+						<li>Localization</li>
+					</ul>
+<!-- 					<p>
+						We wanted our UI to be as intuitive as possible for as many people as possible. As such, we used an approach of "Less is More" and tried to keep the design very clean and simple. As a result, the users only see what they need to. There are no unneeded menus or options taking up screen space.
 
-						This leads to a very enjoyable experiance for the user.
-					</p>
+						This leads to a very enjoyable experience for the user.
+					</p> -->
 				</section>
 
 				<section data-background="#FFFFFF">
 					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-createstation.html"></iframe>
 				</section>
 
-				<section data-background="#FFFFFF">
-					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-station.html"></iframe>
-				</section>
-
-        <!-- Facebook UI sections -->
+				<!-- Facebook UI sections -->
         <section>
 					<section>
 						<h2>Facebook Login Dialog</h2>
-						<br/>
 						<img class="plain-img fb-login-dialog" src="img/facebooklogindialog.png" />
 					</section>
 
@@ -141,8 +142,58 @@
 					</section>
 				</section>
 
+				<section data-background="#FFFFFF">
+					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-station.html"></iframe>
+				</section>
+
 				<section>
 					<img class="mobile-img" src="img/mobilemockup.png" />
+				</section>
+
+				<!-- International -->
+				<section>
+					<section>
+						<h2>Localization</h2>
+						<p>Localizing the user interface will allow for listeners in other
+							 countries to easy navigate the website.</p>
+						<p>The HTTP server can return localized resources using the
+						   <code>Accept-Language</code> header.</p>
+						<p>Mobile applications are easily localized through resource files.</p>
+					</section>
+
+          <section>
+						<h2>Cultural Considerations</h2>
+						<p>The use of &#x1f44d; and &#x1f44e; is not universally accepted as
+							 positive in some countries.</p>
+					  <p>Localization can account for this by using other symbols, like
+					  	 &uarr; and &darr;.</p>
+					</section>
+				</section>
+
+				<!-- Disabilities -->
+				<section>
+					<section>
+						<h2>Colorblind Users</h2>
+						<p>Color usage is consistently matched with easily recognizable
+						   icons.</p>
+						<p>The use of red and green for ratings is coupled with the &#x1f44d;
+							 and &#x1f44e; icons for this reason.</p>
+					</section>
+
+          <section>
+						<h2>Blind Users</h2>
+						<p>Using <code>ALT</code> attributes on images throughout is a simple
+						   way to increase accessibility.</p>
+						<p>Avoiding absolute <code>font-size</code> CSS values can help users
+							 with reduced eyesight.</p>
+					</section>
+
+					<section>
+						<h2>Other Considerations</h2>
+						<p>Adding simple keyboard shortcuts for rating songs and chatting
+							 could benefit those not using a mouse.</p>
+						<!-- <p>.</p> -->
+					</section>
 				</section>
 
 				<section data-state="first-database-slide" id="first-database-slide"
@@ -480,7 +531,7 @@
 			Reveal.addEventListener('slidechanged', function(event) {
 				if (reachedFirstSlideofSection) {
 					reachedFirstSlideofSection = false;
-
+console.log(event.previousSlide);
 					// Make sure we weren't going back to the first slide.
 					if (event.previousSlide.className.indexOf('past') != -1) {
 						Reveal.slide(0, 1);

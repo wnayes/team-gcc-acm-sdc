@@ -52,7 +52,9 @@
             </div><!-- /input-group -->
             </form>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="./"><img src="img/fblogin.png"></img></a></li>
+              <!-- <li><a href="./"><img src="img/fblogin.png"></img></a></li> -->
+              <div class="login-pic profile-pic-3"></div>
+              <span class="login-name">Grumpy Dog</span>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -90,7 +92,13 @@
             <div class="comm-message">
               <span class="comm-message-type comm-message-type-rate-up glyphicon glyphicon-thumbs-up"></span>
               <div class="comm-message-pic profile-pic-4"></div>
-              <div class="comm-message-text">Intruder!</div>
+              <div class="comm-message-pic profile-pic-5"></div>
+              <div class="comm-message-pic profile-pic-6"></div>
+            </div>
+            <div class="comm-message">
+              <span class="comm-message-type comm-message-type-rate-up glyphicon glyphicon-thumbs-up"></span>
+              <div class="comm-message-pic profile-pic-2"></div>
+              <div class="comm-message-text">Favorite song. So smooth. Wow!</div>
             </div>
 
             <div class="input-group comm-comment-area">
@@ -136,7 +144,7 @@
     <script type="text/javascript">
       $(".enter-comment").click(function() {
         if($(".comment-box").hasClass('hidden')) {
-          $(".comment-box").animate({height:106},200).removeClass('hidden');
+          $(".comment-box").animate({height:76},200).removeClass('hidden');
           $(".add-review-btn").text("Cancel reviewing");
           $(".comment-box-icon").removeClass('glyphicon-pencil').addClass('glyphicon-remove');
         } else {
@@ -183,7 +191,7 @@
       };
 
       var sendCommentFn = function() {
-        insertCommMessage("comment", $(".comm-comment-box").val(), 2);
+        insertCommMessage("comment", $(".comm-comment-box").val(), 3);
         $(".comm-comment-box").val('');
       };
       $("#sendCommentBtn").click(sendCommentFn);

@@ -59,6 +59,30 @@ body {
   margin-right: 8px;
 }
 
+.login-pic {
+  border-radius: 2px;
+  float: right;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-top: 10px;
+}
+
+.login-name {
+  float: right;
+  color: #888888;
+  font-size: 11pt;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.login-name:hover {
+  color: #555555;
+  cursor: pointer;
+}
+
 .station-info-panel {
   max-width: 780px;
   background-color: #EEEEEE !important;
@@ -80,6 +104,10 @@ body {
   font-size: 14pt;
   line-height: 60px;
   padding-right: 15px;
+}
+.station-controls:hover {
+  color: #555555;
+  cursor: pointer;
 }
 
 .station-info {
@@ -104,8 +132,10 @@ body {
 }
 
 .member-group-offline {
-  opacity: 0.5;
   max-width: 180px;
+}
+.member-group-offline .station-member-pic {
+  opacity: 0.5;
 }
 
 .station-member {
@@ -118,6 +148,9 @@ body {
   background-size: 32px 32px;
   width: 32px;
   height: 32px;
+}
+.station-member-pic:hover {
+  opacity: 1;
 }
 
 .play-controls-rating {
@@ -330,11 +363,31 @@ body {
 
 
 
+.signup-logo {
+  margin-left: 280px;
+  margin-bottom: 25px;
+}
+.choose-name {
+  font-size: 15pt;
+  text-align: center;
+}
+.choose-genre {
+  font-size: 15pt;
+  text-align: center;
+}
 
-
-
+.form-signup {
+  text-align: center;
+}
+.form-signup-div {
+  max-width: 400px;
+}
+#stationNameBox,
+.form-genre {
+  margin-left: 160px;
+}
 .create-station-panel {
-    max-width: 780px;
+  max-width: 780px;
   background-color: #EEEEEE !important;
   border-color: #CCCCCC !important;
   padding: 10px;
