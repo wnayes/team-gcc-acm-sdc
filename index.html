@@ -146,6 +146,13 @@
 					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-station.html"></iframe>
 				</section>
 
+				<section data-background="#FFFFFF">
+          <h2>Local Music</h2>
+          <p>Listeners will be able to share their own music through their
+          	 personal genre.</p>
+					<iframe style="margin-top: 10px; margin-left: 75px;" class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-localchannel.html"></iframe>
+				</section>
+
 				<section>
 					<img class="mobile-img" src="img/mobilemockup.png" />
 				</section>
@@ -339,7 +346,8 @@
 				<section>
 					<section>
 						<h2>Authentication</h2>
-						<p>By tying user authentication to the <strong>Facebook Login API</strong>,
+						<p>By tying user authentication to the <strong>Facebook Login API</strong>
+							 and other <strong>OAuth providers</strong>,
 							 the complexity of managing user accounts is limited.</p>
 						<p>We still need to manage socket sessions when listeners visit a
 						   channel.</p>
@@ -442,6 +450,16 @@
             	    to duplicate on our infrastructure.</li>
             	<li>External architecture handling audio streaming demands.</li>
             	<li>We will initially scrape song genre and other information.</li>
+            </ul>
+					</section>
+
+					<section class="soundcloud" data-background="rgba(255,119,0,0.5)">
+						<h2>SoundCloud</h2>
+            <ul>
+            	<li>Provides the infrastructure for local musicians to upload their
+            		  own music.</li>
+            	<li>Provides a comprehensive streaming API and OAuth.</li>
+            	<li>Local musicians have a low barrier of entry into our service.</li>
             </ul>
 					</section>
 				</section>
