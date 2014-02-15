@@ -115,6 +115,10 @@
 				</section>
 
 				<section data-background="#FFFFFF">
+					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-createstation.html"></iframe>
+				</section>
+
+				<section data-background="#FFFFFF">
 					<iframe class="stretch" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="ui-station.html"></iframe>
 				</section>
 
@@ -141,10 +145,85 @@
 					<img class="mobile-img" src="img/mobilemockup.png" />
 				</section>
 
-				<section data-state="first-database-slide" id="first-database-slide">
+				<section data-state="first-database-slide" id="first-database-slide"
+				         data-background="#FFFFFF">
 					<h2>Database Design</h2>
-					<p></p>
+					<img class="plain-img" src="diagram/db/er-overview.png" />
 				</section>
+
+        <!-- Entities -->
+				<section>
+          <section>
+          	<h2>Entities</h2>
+	          <p>Our relational model will include 4 entities.</p>
+	          <ul>
+	          	<li>User</li>
+	          	<li>Channel</li>
+	          	<li>Song</li>
+	          	<li>Genre</li>
+	          </ul>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>User Entity</h2>
+	          <img class="plain-img" src="diagram/db/entity-user.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Channel Entity</h2>
+	          <img class="plain-img" src="diagram/db/entity-channel.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Song Entity</h2>
+	          <img class="plain-img" src="diagram/db/entity-song.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Genre Entity</h2>
+	          <img class="plain-img" src="diagram/db/entity-genre.png"></img>
+	        </section>
+	      </section>
+
+	      <!-- Relations -->
+				<section>
+          <section>
+          	<h2>Relations</h2>
+	          <p>Our relational model will include 6 relations.</p>
+	          <ul>
+	          	<li>Creator / Influencer</li>
+	          	<li>Source</li>
+	          	<li>MemberOf</li>
+	          	<li>Rating</li>
+	          	<li>Played</li>
+	          </ul>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Membership Relations</h2>
+	          <img class="plain-img" src="diagram/db/relation-creator-influencer.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Source Relation</h2>
+	          <img class="plain-img" src="diagram/db/relation-source.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>MemberOf Relation</h2>
+	          <img class="plain-img" src="diagram/db/relation-memberof.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Rating Relation</h2>
+	          <img class="plain-img" src="diagram/db/relation-rating.png"></img>
+	        </section>
+
+	        <section data-background="#FFFFFF">
+	        	<h2>Played Relation</h2>
+	          <img class="plain-img" src="diagram/db/relation-played.png"></img>
+	        </section>
+	      </section>
 
 				<section data-state="first-arch-slide" id="first-arch-slide">
 					<h2>System Architecture</h2>

@@ -74,6 +74,14 @@ body {
   float: left;
 }
 
+.station-controls {
+  color: #888888;
+  float: right;
+  font-size: 14pt;
+  line-height: 60px;
+  padding-right: 15px;
+}
+
 .station-info {
   margin-right: 20px;
   padding: 20px;
@@ -92,7 +100,12 @@ body {
 .station-member-group {
   display: inline-block;
   max-width: 128px;
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.member-group-offline {
+  opacity: 0.5;
+  max-width: 180px;
 }
 
 .station-member {
@@ -283,6 +296,15 @@ body {
 .profile-pic-2 { background-image: url('img/profilepics/2.jpg'); }
 .profile-pic-3 { background-image: url('img/profilepics/3.jpg'); }
 .profile-pic-4 { background-image: url('img/profilepics/4.png'); }
+.profile-pic-5 { background-image: url('img/profilepics/5.png'); }
+.profile-pic-6 { background-image: url('img/profilepics/6.png'); }
+.profile-pic-7 { background-image: url('img/profilepics/7.png'); }
+.profile-pic-8 { background-image: url('img/profilepics/8.png'); }
+.profile-pic-9 { background-image: url('img/profilepics/9.png'); }
+.profile-pic-10 { background-image: url('img/profilepics/10.png'); }
+.profile-pic-11 { background-image: url('img/profilepics/11.png'); }
+.profile-pic-12 { background-image: url('img/profilepics/12.png'); }
+.profile-pic-13 { background-image: url('img/profilepics/13.png'); }
 
 .comm-message-text {
   float: left;
@@ -301,4 +323,23 @@ body {
 
 .comm-comment-box {
 
+}
+
+
+
+
+
+
+
+
+
+.create-station-panel {
+    max-width: 780px;
+  background-color: #EEEEEE !important;
+  border-color: #CCCCCC !important;
+  padding: 10px;
+}
+
+.genre-label {
+  font-size: 9pt !important;
 }

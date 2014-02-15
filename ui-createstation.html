@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ACM SDC UI Demo</title>
+
+    <!-- Custom styles for this template -->
+    <link href="ui-station.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/chosen.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css"> -->
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <div>
+              <img class="navbar-logo" src="logos/onnothing/grey48x45.png"></img>
+              <a class="navbar-brand" href="#">GroupTune</a>
+            </div>
+          </div>
+          <div class="navbar-collapse collapse">
+<!--             <form class="navbar-search pull-left">
+              <input type="text" class="station-search search-query input-lg" placeholder="Station name">
+            </form> -->
+<!--             <ul class="nav navbar-nav navbar-left">
+              <li><a href="./">New Station</a></li>
+              <li><a href="./">Find Station</a></li>
+            </ul> -->
+            <form class="navbar-search pull-left">
+            <div class="input-group navbar-search">
+              <input type="text" class="form-control station-search">
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Visit <span class="caret"></span></button>
+                <ul class="dropdown-menu pull-right">
+                  <li><a href="#">Visit</a></li>
+                  <li><a href="#">Create</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+            </div><!-- /input-group -->
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="./"><img src="img/fblogin.png"></img></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <div class="create-station-panel panel panel-default">
+        <div class="panel-body">
+          <form role="form">
+            <div class="form-group">
+              <input class="form-control input-lg" id="stationNameBox" placeholder="Station name">
+            </div>
+            <div class="form-group">
+              <select data-placeholder="Select genre(s)" multiple="" class="genre-select" style="width: 100%;" tabindex="-1" id="multiple-label-example">
+              <option selected value=""></option>
+              <option>2-Step/British Garage</option>
+              <option>Aboriginal Folk</option>
+              <option>Aboriginal Rock</option>
+              <option>Acadian</option>
+              <option>Acappella</option>
+              <option>Acid Folk</option>
+              <option>Acid House</option>
+              <option>Acid Jazz</option>
+              <option>Acid Rock</option>
+              <option>Acid Techno</option>
+              <option>Acoustic Blues</option>
+              <option>Acoustic Chicago Blues</option>
+              <option>Acoustic Louisiana Blues</option>
+              <option>Acoustic Memphis Blues</option>
+              <option>Acoustic New Orleans Blues</option>
+              <option>Acoustic Texas Blues</option>
+              <option>Adult Alternative</option>
+              <option>Adult Alternative Pop/Rock</option>
+              <option>Adult Contemporary</option>
+              <option>African Folk</option>
+              <option>African Jazz</option>
+              <option>Afro-Beat</option>
+              <option>Afro-Brazilian</option>
+              <option>Afro-Colombian</option>
+              <option>Afro-Cuban</option>
+              <option>Afro-Cuban Jazz</option>
+              <option>Afro Peruvian</option>
+              <option>Afro-Pop</option>
+              <option>Album Rock</option>
+              <option>Al-Jil</option>
+              <option>Alternative CCM</option>
+              <option>Alternative Country</option>
+              <option>Alternative Country-Rock</option>
+              <option>Alternative Dance</option>
+              <option>Alternative Folk</option>
+              <option>Alternative Metal</option>
+              <option>Alternative Pop/Rock</option>
+              <option>Alternative Rap</option>
+              <option>Alternative Singer/Songwriter</option>
+              <option>Ambient</option>
+              <option>Ambient Breakbeat</option>
+              <option>Ambient Dub</option>
+              <option>Ambient House</option>
+              <option>Ambient Pop</option>
+              <option>Ambient Techno</option>
+              <option>Americana</option>
+              <option>American Jewish Pop</option>
+              <option>American Popular Song</option>
+              <option>American Punk</option>
+              <option>American Trad Rock</option>
+              <option>American Underground</option>
+              <option>AM Pop</option>
+              <option>Anarchist Punk</option>
+              <option>Andalus Classical</option>
+              <option>Andean Folk</option>
+              <option>Anime Music</option>
+              <option>Anti-Folk</option>
+              <option>Apala</option>
+              <option>Appalachian Folk</option>
+              <option>Arena Rock</option>
+              <option>Argentine Folk</option>
+              <option>Armenian</option>
+              <option>Armenian Folk</option>
+              <option>Asian Folk</option>
+              <option>Asian Pop</option>
+              <option>Atonal</option>
+              <option>Audiobooks</option>
+              <option>Aussie Rock</option>
+              <option>AustroPop</option>
+              <option>Avant-Garde</option>
+              <option>Avant-Garde Jazz</option>
+              <option>Avant-Prog</option>
+              <option>Bachata</option>
+              <option>Bakersfield Sound</option>
+              <option>Ballads</option>
+              <option>Ballroom Dance</option>
+              <option>Banda</option>
+              <option>Bar Band</option>
+              <option>Barbershop Quartet</option>
+              <option>Baroque</option>
+              <option>Baroque Pop</option>
+              <option>Bass Music</option>
+              <option>Bava</option>
+              <option>Beach</option>
+              <option>Beat Poetry</option>
+              <option>Beguine</option>
+              <option>Beguine Moderne</option>
+              <option>Beguine Vide</option>
+              <option>Belair</option>
+              <option>Bel Canto Opera</option>
+              <option>Belly Dancing</option>
+              <option>Bhangra</option>
+              <option>Big Band</option>
+              <option>Big Band Latino</option>
+              <option>Big Beat</option>
+              <option>Bikutsi</option>
+              <option>Black Gospel</option>
+              <option>Blaxploitation</option>
+              <option>Bluebeat</option>
+              <option>Blue-Eyed Soul</option>
+              <option>Bluegrass</option>
+              <option>Bluegrass-Gospel</option>
+              <option>Blue Humor</option>
+              <option>Blues</option>
+              <option>Blues Gospel</option>
+              <option>Blues Revival</option>
+              <option>Blues-Rock</option>
+              <option>Bolero</option>
+              <option>Bollywood</option>
+              <option>Bombara</option>
+              <option>Boogaloo</option>
+              <option>Boogie Rock</option>
+              <option>Boogie-Woogie</option>
+              <option>Bop</option>
+              <option>Bossa Nova</option>
+              <option>Brass Band</option>
+              <option>Brazilian Folk</option>
+              <option>Brazilian Jazz</option>
+              <option>Brazilian Pop</option>
+              <option>Brill Building Pop</option>
+              <option>British Blues</option>
+              <option>British Dance Bands</option>
+              <option>British Folk</option>
+              <option>British Folk-Rock</option>
+              <option>British Invasion</option>
+              <option>British Metal</option>
+              <option>British Psychedelia</option>
+              <option>British Punk</option>
+              <option>British Rap</option>
+              <option>British Trad Rock</option>
+              <option>Britpop</option>
+              <option>Broken Beat</option>
+              <option>Brown-Eyed Soul</option>
+              <option>Bubblegum</option>
+              <option>Bulgarian Folk</option>
+              <option>C-86</option>
+              <option>Cabaret</option>
+              <option>Cadence</option>
+              <option>Cajun</option>
+              <option>Calypso</option>
+              <option>Canterbury Scene</option>
+              <option>Caribbean Folk</option>
+              <option>Carnatic</option>
+              <option>Carnival</option>
+              <option>Carols</option>
+              <option>Cartoon Music</option>
+              <option>Cast Recordings</option>
+              <option>CCM</option>
+              <option>Celebrity</option>
+              <option>Celtic</option>
+              <option>Celtic Folk</option>
+              <option>Celtic Fusion</option>
+              <option>Celtic Gospel</option>
+              <option>Celtic New Age</option>
+              <option>Celtic Pop</option>
+              <option>Celtic Rock</option>
+              <option>Ceremonial</option>
+              <option>Cha-Cha</option>
+              <option>Chamber Jazz</option>
+              <option>Chamber Music</option>
+              <option>Chamber Pop</option>
+              <option>Changui</option>
+              <option>Chant</option>
+              <option>Chants</option>
+              <option>Chanukah</option>
+              <option>Charanga</option>
+              <option>Chassidic</option>
+              <option>Chicago Blues</option>
+              <option>Chicago Soul</option>
+              <option>Children's</option>
+              <option>Children's Folk</option>
+              <option>Children's Stories</option>
+              <option>Chilean Folk</option>
+              <option>Chimurenga</option>
+              <option>Chinese Classical</option>
+              <option>Chinese Folk</option>
+              <option>Chinese Pop</option>
+              <option>Chinese Pop-Rock</option>
+              <option>Choral</option>
+              <option>Choro</option>
+              <option>Chouval Bwa</option>
+              <option>Christian Comedy</option>
+              <option>Christian Metal</option>
+              <option>Christian Punk</option>
+              <option>Christian Rap</option>
+              <option>Christian Rock</option>
+              <option>Christmas</option>
+              <option>Circus Music</option>
+              <option>Classical</option>
+              <option>Classical Crossover</option>
+              <option>Classical Guitar</option>
+              <option>Classical Pop</option>
+              <option>Classic Female Blues</option>
+              <option>Classic Jazz</option>
+              <option>Close Harmony</option>
+              <option>Club/Dance</option>
+              <option>Cocktail</option>
+              <option>College Rock</option>
+              <option>Comedy</option>
+              <option>Comedy Rap</option>
+              <option>Comedy Rock</option>
+              <option>Compas</option>
+              <option>Computer Music</option>
+              <option>Conceptual Art</option>
+              <option>Conjunto</option>
+              <option>Contemporary Bluegrass</option>
+              <option>Contemporary Blues</option>
+              <option>Contemporary Celtic</option>
+              <option>Contemporary Country</option>
+              <option>Contemporary Flamenco</option>
+              <option>Contemporary Folk</option>
+              <option>Contemporary Gospel</option>
+              <option>Contemporary Instrumental</option>
+              <option>Contemporary Jazz</option>
+              <option>Contemporary Native American</option>
+              <option>Contemporary R&B</option>
+              <option>Contemporary Reggae</option>
+              <option>Contemporary Singer/Songwriter</option>
+              <option>Continental Jazz</option>
+              <option>Cool</option>
+              <option>Corrido</option>
+              <option>Country</option>
+              <option>Country Blues</option>
+              <option>Country Boogie</option>
+              <option>Country Comedy</option>
+              <option>Country-Folk</option>
+              <option>Country Gospel</option>
+              <option>Country-Pop</option>
+              <option>Country-Rock</option>
+              <option>Country-Soul</option>
+              <option>Cowboy</option>
+              <option>Cowpunk</option>
+              <option>Creative Orchestra</option>
+              <option>Creole</option>
+              <option>Crossover Jazz</option>
+              <option>Cuatro</option>
+              <option>Cuban Jazz</option>
+              <option>Cuban Pop</option>
+              <option>Cumbia</option>
+              <option>Dance Bands</option>
+              <option>Dancehall</option>
+              <option>Dance-Pop</option>
+              <option>Dance-Rock</option>
+              <option>Danzon</option>
+              <option>Dark Ambient</option>
+              <option>Death Metal/Black Metal</option>
+              <option>Deep Funk</option>
+              <option>Deep Funk Revival</option>
+              <option>Deep Soul</option>
+              <option>Delta Blues</option>
+              <option>Demonstration/Test Disc</option>
+              <option>Detroit Blues</option>
+              <option>Detroit Rock</option>
+              <option>Detroit Techno</option>
+              <option>Dhrupad</option>
+              <option>Dimotiko</option>
+              <option>Dirty Blues</option>
+              <option>Dirty Rap</option>
+              <option>Dirty South</option>
+              <option>Disco</option>
+              <option>Dixieland</option>
+              <option>Dixieland Revival</option>
+              <option>DJ</option>
+              <option>Djabdong</option>
+              <option>Documentary</option>
+              <option>Doom Metal</option>
+              <option>Doo Wop</option>
+              <option>Downbeat</option>
+              <option>Downtempo</option>
+              <option>Drama</option>
+              <option>Dream Pop</option>
+              <option>Drill'n'bass</option>
+              <option>Drinking Songs</option>
+              <option>Dub</option>
+              <option>Dub Poetry</option>
+              <option>Dutch Pop</option>
+              <option>Early American Blues</option>
+              <option>Early British Pop/Rock</option>
+              <option>Early Creative</option>
+              <option>Early Music</option>
+              <option>East Coast Blues</option>
+              <option>East Coast Rap</option>
+              <option>Easter</option>
+              <option>Eastern Europe</option>
+              <option>Eastern European Pop</option>
+              <option>Easy Listening</option>
+              <option>Easy Pop</option>
+              <option>Educational</option>
+              <option>Egyptian/Sudanese Music</option>
+              <option>Electric Blues</option>
+              <option>Electric Chicago Blues</option>
+              <option>Electric Country Blues</option>
+              <option>Electric Delta Blues</option>
+              <option>Electric Harmonica Blues</option>
+              <option>Electric Memphis Blues</option>
+              <option>Electric Texas Blues</option>
+              <option>Electro</option>
+              <option>Electro-Acoustic</option>
+              <option>Electro-Industrial</option>
+              <option>Electro-Jazz</option>
+              <option>Electronic</option>
+              <option>Electronica</option>
+              <option>Electro-Techno</option>
+              <option>Emo</option>
+              <option>Enka</option>
+              <option>Environmental</option>
+              <option>Erotica</option>
+              <option>Ethiopian Pop</option>
+              <option>Ethnic</option>
+              <option>Ethnic Comedy</option>
+              <option>Ethnic Fusion</option>
+              <option>Euro-Dance</option>
+              <option>European Folk</option>
+              <option>Euro-Pop</option>
+              <option>Euro-Rock</option>
+              <option>Exercise</option>
+              <option>Exotica</option>
+              <option>Experimental</option>
+              <option>Experimental Ambient</option>
+              <option>Experimental Big Band</option>
+              <option>Experimental Dub</option>
+              <option>Experimental Electro</option>
+              <option>Experimental Jungle</option>
+              <option>Experimental Rock</option>
+              <option>Experimental Techno</option>
+              <option>Fado</option>
+              <option>Fairy Tales</option>
+              <option>Fantasy</option>
+              <option>Field Recordings</option>
+              <option>Fight Songs</option>
+              <option>Film Music</option>
+              <option>Finger-Picked Guitar</option>
+              <option>Finnish Folk</option>
+              <option>Flamenco</option>
+              <option>Folk</option>
+              <option>Folk-Blues</option>
+              <option>Folk-Jazz</option>
+              <option>Folklore</option>
+              <option>Folk-Pop</option>
+              <option>Folk Revival</option>
+              <option>Folk-Rock</option>
+              <option>Folksongs</option>
+              <option>Foreign Language Rap</option>
+              <option>Foreign Language Rock</option>
+              <option>Forro</option>
+              <option>Frat Rock</option>
+              <option>Freakbeat</option>
+              <option>Free Folk</option>
+              <option>Free Funk</option>
+              <option>Free Improvisation</option>
+              <option>Free Jazz</option>
+              <option>Freestyle</option>
+              <option>French Chanson</option>
+              <option>French Folk</option>
+              <option>French Pop</option>
+              <option>French Rock</option>
+              <option>Fuji</option>
+              <option>Funk</option>
+              <option>Funk Metal</option>
+              <option>Funky Breaks</option>
+              <option>Fusion</option>
+              <option>Gabba</option>
+              <option>Gamelan</option>
+              <option>Game Sounds</option>
+              <option>Gangsta Rap</option>
+              <option>Garage/House</option>
+              <option>Garage Punk</option>
+              <option>Garage Rap/Grime</option>
+              <option>Garage Rock</option>
+              <option>Garage Rock Revival</option>
+              <option>Gay</option>
+              <option>Gay Comedy</option>
+              <option>Gay Country</option>
+              <option>Gay Gospel</option>
+              <option>Georgian Choir</option>
+              <option>German Liedermacher</option>
+              <option>German Schlager</option>
+              <option>German Volksmusik</option>
+              <option>G-Funk</option>
+              <option>Giddha</option>
+              <option>Girl Group</option>
+              <option>Glam Rock</option>
+              <option>Glitch</option>
+              <option>Glitter</option>
+              <option>Goa Trance</option>
+              <option>Go-Go</option>
+              <option>Golden Age</option>
+              <option>Gospel</option>
+              <option>Gospel Choir</option>
+              <option>Goth Metal</option>
+              <option>Goth Rock</option>
+              <option>Greek Folk</option>
+              <option>Gregorian Chant</option>
+              <option>Grindcore</option>
+              <option>Grunge</option>
+              <option>Grupero</option>
+              <option>Guaguancó</option>
+              <option>Guitar Virtuoso</option>
+              <option>Gwo Ka</option>
+              <option>Gypsy</option>
+              <option>Hair Metal</option>
+              <option>Halloween</option>
+              <option>Happy Hardcore</option>
+              <option>Hard Bop</option>
+              <option>Hardcore Punk</option>
+              <option>Hardcore Rap</option>
+              <option>Hardcore Techno</option>
+              <option>Hard Rock</option>
+              <option>Harmonica Blues</option>
+              <option>Harmony Vocal Group</option>
+              <option>Hawaiian Pop</option>
+              <option>Healing</option>
+              <option>Heartland Rock</option>
+              <option>Heavy Metal</option>
+              <option>Hebrew</option>
+              <option>Highlife</option>
+              <option>Hi-NRG</option>
+              <option>Hip-Hop</option>
+              <option>Holiday</option>
+              <option>Hong Kong Pop</option>
+              <option>Honky Tonk</option>
+              <option>Hot Jazz</option>
+              <option>Hot Rod</option>
+              <option>Hot Rod Revival</option>
+              <option>House</option>
+              <option>Hungarian Folk</option>
+              <option>Hymns</option>
+              <option>IDM</option>
+              <option>Illbient</option>
+              <option>Impressionist</option>
+              <option>Improvisation</option>
+              <option>Indian Classical</option>
+              <option>Indian Folk</option>
+              <option>Indian Pop</option>
+              <option>Indie Electronic</option>
+              <option>Indie Pop</option>
+              <option>Indie Rock</option>
+              <option>Indigenous</option>
+              <option>Indipop</option>
+              <option>Industrial</option>
+              <option>Industrial Dance</option>
+              <option>Industrial Drum'n'Bass</option>
+              <option>Industrial Metal</option>
+              <option>Inspirational</option>
+              <option>Instructional</option>
+              <option>Instrumental Country</option>
+              <option>Instrumental Gospel</option>
+              <option>Instrumental Pop</option>
+              <option>Instrumental Rock</option>
+              <option>International Folk</option>
+              <option>International Pop</option>
+              <option>Interview</option>
+              <option>Inuit</option>
+              <option>Iran-Classical</option>
+              <option>Irish Folk</option>
+              <option>Italian Folk</option>
+              <option>Italian Pop</option>
+              <option>Jaipongan</option>
+              <option>Jam Bands</option>
+              <option>Jangle Pop</option>
+              <option>Japanese Orchestral</option>
+              <option>Japanese Pop</option>
+              <option>Japanese Rock</option>
+              <option>Jazz</option>
+              <option>Jazz Blues</option>
+              <option>Jazz-Funk</option>
+              <option>Jazz-House</option>
+              <option>Jazz-Pop</option>
+              <option>Jazz-Rap</option>
+              <option>Jazz-Rock</option>
+              <option>Jesus Rock</option>
+              <option>Jewish Folk</option>
+              <option>Jewish Music</option>
+              <option>Jibaro</option>
+              <option>Jit</option>
+              <option>Jive</option>
+              <option>Joik</option>
+              <option>Jug Band</option>
+              <option>Juju</option>
+              <option>Juke Joint Blues</option>
+              <option>Jump Blues</option>
+              <option>Jungle/Drum'n'bass</option>
+              <option>Junkanoo</option>
+              <option>Kabuki</option>
+              <option>Karaoke</option>
+              <option>Kayokyoku</option>
+              <option>Kecak</option>
+              <option>Khmer Dance</option>
+              <option>Klezmer</option>
+              <option>Kora</option>
+              <option>Korean Pop</option>
+              <option>Korean Rock</option>
+              <option>Kraut Rock</option>
+              <option>Laika</option>
+              <option>Lambada</option>
+              <option>L.A. Punk</option>
+              <option>Latin</option>
+              <option>Latin CCM</option>
+              <option>Latin Comedy</option>
+              <option>Latin Dance</option>
+              <option>Latin Folk</option>
+              <option>Latin Freestyle</option>
+              <option>Latin Gospel</option>
+              <option>Latin Jazz</option>
+              <option>Latin Pop</option>
+              <option>Latin Rap</option>
+              <option>Latin Rock</option>
+              <option>Latin Soul</option>
+              <option>Left-Field Hip-Hop</option>
+              <option>Left-Field House</option>
+              <option>Lo-Fi</option>
+              <option>Louisiana Blues</option>
+              <option>Lounge</option>
+              <option>Lovers Rock</option>
+              <option>Lullabies</option>
+              <option>Macapat Poetry</option>
+              <option>Madchester</option>
+              <option>Mainstream Jazz</option>
+              <option>Makossa</option>
+              <option>Mambo</option>
+              <option>Mantras</option>
+              <option>Marabi</option>
+              <option>March</option>
+              <option>Marches</option>
+              <option>Mariachi</option>
+              <option>Math Rock</option>
+              <option>Mbalax</option>
+              <option>Mbaqanga</option>
+              <option>M-Base</option>
+              <option>Mbira</option>
+              <option>Mbube</option>
+              <option>Mbuti Choral</option>
+              <option>Medieval</option>
+              <option>Meditation</option>
+              <option>Memphis Blues</option>
+              <option>Memphis Soul</option>
+              <option>Mento</option>
+              <option>Merengue</option>
+              <option>Merenhouse</option>
+              <option>Merseybeat</option>
+              <option>Mexican Folk</option>
+              <option>Microhouse</option>
+              <option>Microsound</option>
+              <option>Microtonal</option>
+              <option>Middle Eastern Pop</option>
+              <option>Midwest Rap</option>
+              <option>Military</option>
+              <option>Mini Jazz</option>
+              <option>Minimalism</option>
+              <option>Minimal Techno</option>
+              <option>Minstrel</option>
+              <option>Miscellaneous</option>
+              <option>Mixed Media</option>
+              <option>Mod</option>
+              <option>Modal Music</option>
+              <option>Modern Acoustic Blues</option>
+              <option>Modern Big Band</option>
+              <option>Modern Composition</option>
+              <option>Modern Creative</option>
+              <option>Modern Delta Blues</option>
+              <option>Modern Electric Blues</option>
+              <option>Modern Electric Chicago Blues</option>
+              <option>Modern Electric Texas Blues</option>
+              <option>Modern Free</option>
+              <option>Modern Son</option>
+              <option>Mod Revival</option>
+              <option>Mood Music</option>
+              <option>Moravian Folk</option>
+              <option>Morna</option>
+              <option>Morning Radio</option>
+              <option>Motown</option>
+              <option>Movie Themes</option>
+              <option>MPB</option>
+              <option>Mugam</option>
+              <option>Musette</option>
+              <option>Musical Comedy</option>
+              <option>Musicals</option>
+              <option>Musical Theater</option>
+              <option>Music Hall</option>
+              <option>Musique Actuelle</option>
+              <option>Musique Concrète</option>
+              <option>Mystical Minimalism</option>
+              <option>Nashville Sound/Countrypolitan</option>
+              <option>Nationalist</option>
+              <option>Nature</option>
+              <option>Neo-Bop</option>
+              <option>Neo-Classical</option>
+              <option>Neo-Classical Metal</option>
+              <option>Neo-Electro</option>
+              <option>Neo-Glam</option>
+              <option>Neo-Prog</option>
+              <option>Neo-Psychedelia</option>
+              <option>Neo-Romantic</option>
+              <option>Neo-Soul</option>
+              <option>Neo-Traditional</option>
+              <option>Neo-Traditional Folk</option>
+              <option>Neo-Traditionalist Country</option>
+              <option>New Acoustic</option>
+              <option>New Age</option>
+              <option>New Age Tone Poems</option>
+              <option>Newbeat</option>
+              <option>New Jack Swing</option>
+              <option>New Orleans Blues</option>
+              <option>New Orleans Brass Bands</option>
+              <option>New Orleans Jazz</option>
+              <option>New Orleans R&B</option>
+              <option>New Romantic</option>
+              <option>New Traditionalist</option>
+              <option>New Wave</option>
+              <option>New Wave of British Heavy Metal</option>
+              <option>New Wave/Post-Punk Revival</option>
+              <option>New York Blues</option>
+              <option>New York Punk</option>
+              <option>New York Salsa</option>
+              <option>New Zealand Rock</option>
+              <option>Nissiotiko</option>
+              <option>Noh</option>
+              <option>Noise</option>
+              <option>Noise Pop</option>
+              <option>Noise-Rock</option>
+              <option>Norteño</option>
+              <option>Northern Soul</option>
+              <option>Norwegian Folk</option>
+              <option>Nostalgia</option>
+              <option>Novelty</option>
+              <option>Novelty Ragtime</option>
+              <option>No Wave</option>
+              <option>Nu Breaks</option>
+              <option>Nueva Cancion</option>
+              <option>Nueva Trova</option>
+              <option>Nursery Rhymes</option>
+              <option>Nyahbinghi</option>
+              <option>Obscuro</option>
+              <option>Observational Humor</option>
+              <option>Oi!</option>
+              <option>Okinawan Pop</option>
+              <option>Okinawan Traditional</option>
+              <option>Old-School Rap</option>
+              <option>Old-Timey</option>
+              <option>Omutibo</option>
+              <option>Onda Grupera</option>
+              <option>Opera</option>
+              <option>Operettas</option>
+              <option>Oratories</option>
+              <option>Orchestral</option>
+              <option>Orchestral Jazz</option>
+              <option>Orchestral Pop</option>
+              <option>Original Score</option>
+              <option>Outlaw Country</option>
+              <option>Pachanga</option>
+              <option>Paisley Underground</option>
+              <option>Pan-Global</option>
+              <option>Party Rap</option>
+              <option>Party Soca</option>
+              <option>Peruvian Folk</option>
+              <option>Philly Soul</option>
+              <option>Piano Blues</option>
+              <option>Piedmont Blues</option>
+              <option>Pipe Bands</option>
+              <option>Plena</option>
+              <option>Poetry</option>
+              <option>Political Comedy</option>
+              <option>Political Folk</option>
+              <option>Political Rap</option>
+              <option>Political Reggae</option>
+              <option>Polka</option>
+              <option>Pop</option>
+              <option>Pop Idol</option>
+              <option>Pop-Metal</option>
+              <option>Pop-Rap</option>
+              <option>Pop/Rock</option>
+              <option>Pop-Soul</option>
+              <option>Pop Underground</option>
+              <option>Portuguese Music</option>
+              <option>Post-Bop</option>
+              <option>Post-Disco</option>
+              <option>Post-Grunge</option>
+              <option>Post-Hardcore</option>
+              <option>Post-Minimalism</option>
+              <option>Post-Punk</option>
+              <option>Post-Rock/Experimental</option>
+              <option>Post-Romantic</option>
+              <option>Power Metal</option>
+              <option>Power Pop</option>
+              <option>Praise & Worship</option>
+              <option>Prank Calls</option>
+              <option>Prewar Blues</option>
+              <option>Prewar Country Blues</option>
+              <option>Prewar Gospel Blues</option>
+              <option>Process-Generated</option>
+              <option>Progressive Alternative</option>
+              <option>Progressive Big Band</option>
+              <option>Progressive Bluegrass</option>
+              <option>Progressive Country</option>
+              <option>Progressive Electronic</option>
+              <option>Progressive Folk</option>
+              <option>Progressive House</option>
+              <option>Progressive Jazz</option>
+              <option>Progressive Metal</option>
+              <option>Progressive Trance</option>
+              <option>Prog-Rock/Art Rock</option>
+              <option>Proto-Punk</option>
+              <option>Psychedelic</option>
+              <option>Psychedelic Pop</option>
+              <option>Psychedelic Soul</option>
+              <option>Psychobilly</option>
+              <option>Pub Rock</option>
+              <option>Punk</option>
+              <option>Punk Blues</option>
+              <option>Punk Metal</option>
+              <option>Punk-Pop</option>
+              <option>Punk Revival</option>
+              <option>Pygmy</option>
+              <option>Qawwali</option>
+              <option>Quadrille</option>
+              <option>Quechua</option>
+              <option>Queercore</option>
+              <option>Quiet Storm</option>
+              <option>Radio Plays</option>
+              <option>Radio Shows</option>
+              <option>Radio Works</option>
+              <option>Raga</option>
+              <option>Ragga</option>
+              <option>Ragtime</option>
+              <option>Rai</option>
+              <option>Rakugo</option>
+              <option>Ranchera</option>
+              <option>Rap</option>
+              <option>Rap-Metal</option>
+              <option>Rap-Rock</option>
+              <option>Rapso</option>
+              <option>Rave</option>
+              <option>R&B</option>
+              <option>Read-Along Stories</option>
+              <option>Reggae</option>
+              <option>Reggae Gospel</option>
+              <option>Reggae-Pop</option>
+              <option>Reggaeton</option>
+              <option>Relaxation</option>
+              <option>Rembetika</option>
+              <option>Renaissance</option>
+              <option>Retro-Rock</option>
+              <option>Retro-Soul</option>
+              <option>Retro Swing</option>
+              <option>Rhumba</option>
+              <option>Riot Grrrl</option>
+              <option>Rock</option>
+              <option>Rockabilly</option>
+              <option>Rockabilly Revival</option>
+              <option>Rock en Español</option>
+              <option>Rock & Roll</option>
+              <option>Rocksteady</option>
+              <option>Rodeo</option>
+              <option>Romantic</option>
+              <option>Roots Reggae</option>
+              <option>Roots Rock</option>
+              <option>Russian Folk</option>
+              <option>Sacred Choral</option>
+              <option>Sacred Vocal</option>
+              <option>Sadcore</option>
+              <option>Salsa</option>
+              <option>Samba</option>
+              <option>Satire</option>
+              <option>Scandinavian Folk</option>
+              <option>Scandinavian Metal</option>
+              <option>Scandinavian Pop</option>
+              <option>Scottish Folk</option>
+              <option>Screamo</option>
+              <option>Scriptures</option>
+              <option>Sea Shanties</option>
+              <option>Séga</option>
+              <option>Self-Help</option>
+              <option>Shaabi</option>
+              <option>Sharki</option>
+              <option>Shibuya-Kei</option>
+              <option>Shinto</option>
+              <option>Shock Jock</option>
+              <option>Shoegaze</option>
+              <option>Show Tunes</option>
+              <option>Sing-Along</option>
+              <option>Singer/Songwriter</option>
+              <option>Ska</option>
+              <option>Ska-Punk</option>
+              <option>Ska Revival</option>
+              <option>Skatepunk</option>
+              <option>Sketch Comedy</option>
+              <option>Skiffle</option>
+              <option>Slack-Key Guitar</option>
+              <option>Slide Guitar Blues</option>
+              <option>Slowcore</option>
+              <option>Sludge Metal</option>
+              <option>Smooth Jazz</option>
+              <option>Smooth Reggae</option>
+              <option>Smooth Soul</option>
+              <option>Soca</option>
+              <option>Social Commentary</option>
+              <option>Society Dance Band</option>
+              <option>Soft Rock</option>
+              <option>Software/Sounds</option>
+              <option>Solo Instrumental</option>
+              <option>Son</option>
+              <option>Sonero</option>
+              <option>Song Parody</option>
+              <option>Songster</option>
+              <option>Sophisti-Pop</option>
+              <option>Soukous</option>
+              <option>Soul</option>
+              <option>Soul-Blues</option>
+              <option>Soul-Jazz</option>
+              <option>Sound Art</option>
+              <option>Sound Collage</option>
+              <option>Sound Effects</option>
+              <option>Sound Sculpture</option>
+              <option>Soundtrack</option>
+              <option>Soundtracks</option>
+              <option>South African Folk</option>
+              <option>South African Pop</option>
+              <option>Southeast Asian Music</option>
+              <option>Southern Gospel</option>
+              <option>Southern Rap</option>
+              <option>Southern Rock</option>
+              <option>Southern Soul</option>
+              <option>Space</option>
+              <option>Space Age Pop</option>
+              <option>Space Rock</option>
+              <option>optionish Folk</option>
+              <option>Speeches</option>
+              <option>Speed Metal</option>
+              <option>Spiritual</option>
+              <option>Spirituals</option>
+              <option>Spoken Word</option>
+              <option>Sports Anthems</option>
+              <option>Spouge</option>
+              <option>Spy Music</option>
+              <option>Square Dance</option>
+              <option>Standards</option>
+              <option>Standup Comedy</option>
+              <option>Steel Band</option>
+              <option>St. Louis Blues</option>
+              <option>Stoner Metal</option>
+              <option>Straight-Edge</option>
+              <option>Stride</option>
+              <option>String Bands</option>
+              <option>Structured Improvisation</option>
+              <option>Sunshine Pop</option>
+              <option>Surf</option>
+              <option>Surf Revival</option>
+              <option>Swamp Blues</option>
+              <option>Swamp Pop</option>
+              <option>Swedish Folk</option>
+              <option>Swedish Pop/Rock</option>
+              <option>Sweet Bands</option>
+              <option>Swing</option>
+              <option>Switzerland Folk</option>
+              <option>Symphonic Black Metal</option>
+              <option>Synth Pop</option>
+              <option>Taarab</option>
+              <option>Taiwanese Pop</option>
+              <option>Tango</option>
+              <option>Tape Music</option>
+              <option>Tech-House</option>
+              <option>Techno</option>
+              <option>Techno Bass</option>
+              <option>Techno-Dub</option>
+              <option>Techno-Tribal</option>
+              <option>Teen Idol</option>
+              <option>Teen Pop</option>
+              <option>Tejano</option>
+              <option>Television Music</option>
+              <option>Texas Blues</option>
+              <option>Tex-Mex</option>
+              <option>Thai Pop</option>
+              <option>Thanksgiving</option>
+              <option>Third Stream</option>
+              <option>Third Wave Ska Revival</option>
+              <option>Thrash</option>
+              <option>Throat Singing</option>
+              <option>Timba</option>
+              <option>Tin Pan Alley Pop</option>
+              <option>Torch Songs</option>
+              <option>Township Jazz</option>
+              <option>Traditional</option>
+              <option>Traditional Bluegrass</option>
+              <option>Traditional Cajun</option>
+              <option>Traditional Celtic</option>
+              <option>Traditional Chinese</option>
+              <option>Traditional Country</option>
+              <option>Traditional European Folk</option>
+              <option>Traditional Folk</option>
+              <option>Traditional Gospel</option>
+              <option>Traditional Irish Folk</option>
+              <option>Traditional Japanese</option>
+              <option>Traditional Korean</option>
+              <option>Traditional Middle Eastern Folk</option>
+              <option>Traditional Native American</option>
+              <option>Traditional Pop</option>
+              <option>Traditional Scottish Folk</option>
+              <option>Trad Jazz</option>
+              <option>Trance</option>
+              <option>Travel</option>
+              <option>Tribal-House</option>
+              <option>Tribute Albums</option>
+              <option>Trip-Hop</option>
+              <option>Tropical</option>
+              <option>Tropicalia</option>
+              <option>Trot</option>
+              <option>Trova</option>
+              <option>Truck Driving Country</option>
+              <option>Turkish Folk</option>
+              <option>Turkish Music</option>
+              <option>Turntablism</option>
+              <option>TV Soundtracks</option>
+              <option>Twee Pop</option>
+              <option>Underground Rap</option>
+              <option>Uptown Soul</option>
+              <option>Urban</option>
+              <option>Urban Blues</option>
+              <option>Urban Cowboy</option>
+              <option>Urban Folk</option>
+              <option>Vallenato</option>
+              <option>Vaudeville</option>
+              <option>Vaudeville Blues</option>
+              <option>Vaudou</option>
+              <option>Video</option>
+              <option>Video Game Music</option>
+              <option>Vocal</option>
+              <option>Vocalese</option>
+              <option>Vocal Jazz</option>
+              <option>Vocal Pop</option>
+              <option>Waltz</option>
+              <option>Wedding Music</option>
+              <option>West Coast Blues</option>
+              <option>West Coast Jazz</option>
+              <option>West Coast Rap</option>
+              <option>Western Swing</option>
+              <option>Western Swing Revival</option>
+              <option>Women's</option>
+              <option>Work Songs</option>
+              <option>World</option>
+              <option>Worldbeat</option>
+              <option>World Fusion</option>
+              <option>Yodeling</option>
+              <option>Zouk</option>
+              <option>Zydeco</option>
+              </select>
+
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div><!-- /container -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/chosen.jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $(".genre-select").chosen();
+    </script>
+  </body>
+</html>
