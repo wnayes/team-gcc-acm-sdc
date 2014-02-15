@@ -276,6 +276,28 @@
 	        </section>
 	      </section>
 
+        <section>
+		      <section>
+						<h2>NoSQL Usage</h2>
+						<p>Temporarily stored information will be handled outside of the SQL
+							 server, using the key-value store <strong>Redis</strong>.</p>
+					</section>
+
+					<section>
+						<h2>Session Info</h2>
+						<p>Users connected over a WebSocket connection will have their
+							 session information stored in Redis.</p>
+						<p>A <code>[userid]-session</code> key would hold the session token.</p>
+					</section>
+
+					<section>
+						<h2>Scalability</h2>
+						<p>Different listeners may be connected to different Node.js servers.</p>
+						<p>Redis can store a pairing between the user id and the specific server
+							 for passing events between Node.js instances.</p>
+					</section>
+			  </section>
+
 				<section data-state="first-arch-slide" id="first-arch-slide">
 					<h2>System Architecture</h2>
 					<ul>
@@ -347,11 +369,11 @@
 
         <!-- Chat communication. -->
 				<section>
-					<section>
+					<section data-background="#FFFFFF">
 						<h2>Chat</h2>
 						<p>Listeners will be able to participate in a live chat with other
 							 authenticated members.</p>
-            <p>TODO INSERT SOME UI HERE ?</p>
+            <img class="plain-img" src="img/chat-ui.png" />
 					</section>
 
 					<section data-background="#FFFFFF">
@@ -375,10 +397,10 @@
 
 				<!-- Rating broadcasting. -->
 				<section>
-					<section>
+					<section data-background="#FFFFFF">
 						<h2>Ratings</h2>
 						<p>Listeners will also receive reviews from others in their chat feed.</p>
-						TODO UI HERE
+						<img class="plain-img" src="img/rating-ui.png"></img>
 <!--             <p>These would be sent in a similar manner as chat messages;
                <code>rating-send</code> and <code>rating-recv</code> would be
                communicated with relevant values.</p> -->
