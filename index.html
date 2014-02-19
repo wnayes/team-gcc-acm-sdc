@@ -65,15 +65,6 @@
 					<p>Listeners pick a memorable <strong>name</strong> to distinguish
 					   their channel.</p>
 					<p>A <strong>genre mix</strong> is chosen to seed future song selections.</p>
-
-<!--
-					<p>
-
-						Users can like or dislike songs which will in turn shape what music the station plays.
-
-						Users can also leave a comment on a song if they so choose. These comments and ratings are available to see by others on the station.
-
-					</p> -->
 				</section>
 
         <section>
@@ -83,9 +74,6 @@
 					<p>The currently playing song is given <strong>thumbs up</strong> or
 					   <strong>thumbs down</strong> by active influencers to shape future
 					   song selection.</p>
-<!-- 					<br />
-					<span class="big-thumb glyphicon glyphicon-thumbs-up"></span>
-					<span class="big-thumb glyphicon glyphicon-thumbs-up"></span> -->
         </section>
 
 				<section>
@@ -95,16 +83,6 @@
 						 share channels with their friends.</p>
 				</section>
 
-<!-- 				<section>
-					<h2>Under the Hood</h2>
-					<p>
-
-						By using Spotify and Facebook API's we can lighten the load that would prohibit large amounts of people to use the system. In this way, we can support many users concurrently.
-
-						Since we are using Spotify as our source of music, we need not worry about users trying to download or save songs as Spotify is a streaming service.
-					</p>
-				</section> -->
-
 				<section data-state="first-ui-slide" id="first-ui-slide">
 					<h2>UI Overview</h2>
 					<ul>
@@ -113,11 +91,6 @@
 						<li>Mobile</li>
 						<li>Localization</li>
 					</ul>
-<!-- 					<p>
-						We wanted our UI to be as intuitive as possible for as many people as possible. As such, we used an approach of "Less is More" and tried to keep the design very clean and simple. As a result, the users only see what they need to. There are no unneeded menus or options taking up screen space.
-
-						This leads to a very enjoyable experience for the user.
-					</p> -->
 				</section>
 
 				<section data-background="#FFFFFF">
@@ -337,7 +310,6 @@
 					</section>
 
 	        <section data-background="#FFFFFF">
-	          <!-- <object id="simpleArchDiagram" data="diagram/arch/arch-simple.svg" type="image/svg+xml"></object> -->
 	          <img src="diagram/arch/simple-arch.png"></img>
 	        </section>
 	      </section>
@@ -366,15 +338,6 @@
 					<section data-background="#FFFFFF">
 						<h2>Establishing a Connection</h2>
 						<img class="plain-img" src="diagram/api/auth.png"></img>
-<!-- 						<p class="left-p">When a socket connection is requested:</p>
-						<ol>
-              <li>Verify client authentication.
-                 <ul><li>If channel is private and the user is not privileged, deny request.</li></ul>
-              </li>
-              <li>Create a session identifier for the connection and store in Redis.</li>
-              <li>Keep track of the socket's channel association.</li>
-              <li>Acknowledge success to the client and return session id, etc.</li>
-						</ol> -->
 					</section>
 
 					<section>
@@ -398,19 +361,11 @@
 					<section data-background="#FFFFFF">
 						<h2>Sending and Receiving</h2>
 						<img class="plain-img" src="diagram/api/chat-send-recv.png"></img>
-						<!-- <p>With an open socket connection, a <code>chat-send</code> event is
-							 emitted to the server.</p>
-						<p>Clients will receive <code>chat-recv</code> events for each message
-							 being sent to the group.</p> -->
 					</section>
 
 					<section data-background="#FFFFFF">
 						<h2>Presence Status</h2>
 						<img class="plain-img" src="diagram/api/chat-left-join.png"></img>
-						<!-- <p>With an open socket connection, a <code>chat-send</code> event is
-							 emitted to the server.</p>
-						<p>Clients will receive <code>chat-recv</code> events for each message
-							 being sent to the group.</p> -->
 					</section>
 				</section>
 
@@ -420,9 +375,6 @@
 						<h2>Ratings</h2>
 						<p>Listeners will also receive reviews from others in their chat feed.</p>
 						<img class="plain-img" src="img/rating-ui.png"></img>
-<!--             <p>These would be sent in a similar manner as chat messages;
-               <code>rating-send</code> and <code>rating-recv</code> would be
-               communicated with relevant values.</p> -->
 					</section>
 
 					<section data-background="#FFFFFF">
@@ -444,13 +396,6 @@
 					<section data-background="#FFFFFF">
 						<h2>Song Broadcasting</h2>
 						<img class="plain-img" src="diagram/api/new-song.png"></img>
-<!-- 						<p>A <code>new-song</code> event will be received by clients in
-						   preparation for changing music.</p>
-						<p class="left-p">Included properties:</p>
-						<ul class="compact-ul">
-							<li>Song ID</li>
-							<li>Playback Start Time</li>
-						</ul> -->
 					</section>
 
 					<section class="spotify" data-background="rgba(129,183,26,0.5)">
@@ -502,40 +447,6 @@
             <img class="plain-img" src="diagram/arch/mysql-sharding.png"></img>
           </section>
 				</section>
-
-				<!-- Song selection -->
-<!-- 				<section>
-					<section>
-						<h2>Song Selection</h2>
-						<p>The success of any Internet radio application is dependent on a
-							 <strong>supply of music</strong>.</p>
-						<p>Thankfully, we have an <strong>external source</strong> for this!</p>
-					</section>
-
-					<section class="spotify" data-background="rgba(129,183,26,0.5)">
-						<h2>Spotify Benefits</h2>
-            <ul>
-            	<li>Existing library of more than 20 million songs.</li>
-            	<li>External architecture handling audio streaming demands.</li>
-            	<li>Ability to search by various properties, including genre.</li>
-            </ul>
-					</section>
-
-					<section class="spotify" data-background="rgba(129,183,26,0.5)">
-						<h2>Spotify Drawbacks</h2>
-            <ul>
-            	<li>API does not enforce DMCA.</li>
-            	<li>We need to rely either repeated requests for Spotify data,
-            	    or duplicate their information locally.</li>
-            </ul>
-					</section>
-
-					<section class="spotify" data-background="rgba(129,183,26,0.5)">
-						<h2>Spotify API</h2>
-            <p>Spotify will provide an HTTP REST API with searching and playback
-            	 capabilities.</p>
-					</section>
-				</section> -->
 			</div>
 		</div>
 
@@ -553,22 +464,7 @@
 
 				theme: 'team-gcc', // available themes are in /css/theme
 				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
-
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
-
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
 			});
-
 
 			var reachedFirstSlideofSection = false;
 			var firstSlideVarset = function() {
@@ -582,8 +478,8 @@
 			Reveal.addEventListener('slidechanged', function(event) {
 				if (reachedFirstSlideofSection) {
 					reachedFirstSlideofSection = false;
-console.log(event.previousSlide);
-					// Make sure we weren't going back to the first slide.
+
+          // Make sure we weren't going back to the first slide.
 					if (event.previousSlide.className.indexOf('past') != -1) {
 						Reveal.slide(0, 1);
 					}
